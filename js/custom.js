@@ -14,6 +14,8 @@ $(document).ready(function() {
 		});
 	});
 
+	// Below lies horrible code that needs to be refactored. Read at your own risk.
+
 	var initStreamOne = function() {
 
 		var rset = "01";
