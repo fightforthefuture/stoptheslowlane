@@ -113,13 +113,7 @@ body
 	text-align:center;
 	z-index:10;
 	width:100%;
-	top: 50%;
-	padding-top:15%;
-	-webkit-transform: translateY(-50%);
-	-moz-transform: translateY(-50%);
-	-o-transform: translateY(-50%);
-
-
+	top:100px;
 }
 
 .hero h1
