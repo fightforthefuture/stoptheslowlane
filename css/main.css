@@ -178,6 +178,7 @@ div.join {
 	color: white;
 	text-shadow: 0px 1px 2px #fff;
 }
+div.join.contact { margin-top: 0px; padding-top: 15px;}
 div.join h1 {
 	font-size: 48px;
 	color: #669;
