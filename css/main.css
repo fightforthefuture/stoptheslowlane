@@ -157,9 +157,24 @@ img.protestors { margin: 50px 0px; max-width: 100%; height: auto; }
 
 .main-container
 {
-	padding-top:80px;
+	padding-top:30px;
 	padding-bottom:40px;
 }
+
+div.join {
+	margin-top: 50px;
+	background: #88f;
+	border-top: 1px solid #55d;
+	border-bottom: 1px solid #55d;
+	color: white;
+	text-shadow: 0px 1px 1px #339;
+}
+div.join h1 {
+	font-size: 48px;
+	color: white;
+	padding: 50px 0px;
+}
+hr { border-color: #ccc; }
 
 .main-container img
 {
@@ -175,12 +190,19 @@ img.protestors { margin: 50px 0px; max-width: 100%; height: auto; }
 	
 	.main-styles .txt
 	{
-		margin-top:35px;
 		font-size:18px;
 		line-height:30px;
 		color:#333333;
 		font-weight:300;
 	}
+
+iframe.widget_preview {
+	width: 750px;
+	height: 400px;
+	margin: 0px auto;
+}
+img.anigif { border: 1px dotted gray; }
+p.center { text-align: center; }
 
 p.lead {
 	font-size:24px;

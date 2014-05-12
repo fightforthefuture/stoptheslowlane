@@ -19,8 +19,8 @@
 
 		/* --- LOADER ANIMATION CSS -- */
 		#loader { position: relative; display: none; height: 100%; left: 0px; top: 0px; -webkit-transition: all 1s ease-out; -moz-transition: all 1s ease-out; -o-transition: all 1s ease-out; transition: all 1s ease-out; }
-		#loader .warning { position: absolute; color: gray; width: 430px; padding: 5px; background: white; bottom: -16px; left: 50%; margin-left: -215px; text-align: center; }
-		#loader .gutter { width: 100%; height: 100%; border: 1px dotted gray; border-radius: 10px; }
+		#loader .warning { position: absolute; color: gray; width: 430px; padding: 5px; background: white; bottom: -16px; left: 50%; margin-left: -215px; text-align: center; -webkit-transition: all 1s ease-out; -moz-transition: all 1s ease-out; -o-transition: all 1s ease-out; transition: all 1s ease-out; }
+		#loader .gutter { width: 100%; height: 100%; border: 1px dotted gray; border-radius: 10px; -webkit-transition: all 1s ease-out; -moz-transition: all 1s ease-out; -o-transition: all 1s ease-out; transition: all 1s ease-out; }
 		#loader .wrapper { width: 200px; height: 20px; position: absolute; top: 50%; left: 50%; }
 		#loader .border { border: 3px solid #222; height: 100%; width: 100%; position: relative; left: -50%; top: -50%; padding: 4px 3px; }
 		#loader .whitespace { overflow: hidden; height: 100%; width: 100%; margin: 0 auto; overflow: hidden; position: relative; }
@@ -110,7 +110,9 @@
 
 	var animations = {
 		loader: {
-			options: {},
+			options: {
+				infinite: false
+			},
 			init: function(options) {
 				for (var k in options) this.options[k] = options[k];
 				return this;
@@ -133,6 +135,17 @@
 						intervalId = setInterval(animateText, 3750);
 				}
 				animateText();
+
+				$('#loader').show();
+				$('#modal').addClass('visible');
+
+				if (animations.loader.options.infinite)
+					return false;
+
+				setTimeout(function() {
+					$('#loader .warning').css('opacity', 0);
+					$('#loader .gutter').css('border-color', 'rgba(255, 255, 255, 0)');
+				}, 13000);
 				setTimeout(function() {
 					//$('#loader').css('opacity', 0);
 					$('#loader .gutter').addClass('animated fadeOutDown');
@@ -144,14 +157,15 @@
 					}, 500);
 				}, 14000);
 
-				$('#loader').show();
-				$('#modal').addClass('visible');
+				
 
 
 			}
 		},
 		comcast: {
-			options: {},
+			options: {
+				infinite: false
+			},
 			init: function(options) {
 				for (var k in options) this.options[k] = options[k];
 				return this;
@@ -178,6 +192,9 @@
 					$('#comcast .shrinkable').addClass('shrunk');
 				}
 				var showLink = function() {
+					if (animations.comcast.options.infinite)
+						return false;
+
 					$('#comcast a').css('display', 'block');
 					setTimeout(function() {
 						$('#comcast a').addClass('show');
@@ -198,7 +215,7 @@
 		}
 	}
 
-	var showCTA = function() {
+	var showCTA = function(hide_close_button) {
 		var orgs = [
 			{
 				'name': 'Fight for the Future',
@@ -233,10 +250,13 @@
 		$('#cta').css('display', 'block');
 		$('#cta').addClass('animated fadeInDown');
 				
-		$('#close').css('opacity', 1);
-		$('#close').click(function() {
-			sendMessage('stop');
-		});
+		if (!hide_close_button)
+		{
+			$('#close').css('opacity', 1);
+			$('#close').click(function() {
+				sendMessage('stop');
+			});
+		}
 
 		$('button.submit').click(function(e) {
 			e.preventDefault();
@@ -328,11 +348,26 @@
 	});
 
 	// For quick test of the CTA form, add #SHOW_CTA to the URL (before load)
+	// ----------------------------------------------------------------------
 	if (window.location.href.indexOf('SHOW_CTA') != -1)
 	{
 		$('#modal').css('opacity', 1);
+		$('body').css('background', '#fff');
+		showCTA(true);
+	}
+	else if (window.location.href.indexOf('SHOW_COMCAST') != -1)
+	{
+		$('#modal').css('opacity', 1);
 		$('body').css('background', '#eee');
-		showCTA();
+		animations.comcast.options.infinite = true;
+		animations.comcast.start();
+	}
+	else if (window.location.href.indexOf('SHOW_LOADER') != -1)
+	{
+		$('#modal').css('opacity', 1);
+		$('body').css('background', '#fff');
+		animations.loader.options.infinite = true;
+		animations.loader.start();
 	}
 </script>
 </html>
