@@ -6,6 +6,10 @@ body
 	color:#333;
 }
 
+strong {
+	font-weight: 600;
+}
+
 /* Stream Packets */
 
 .packets {
@@ -142,7 +146,7 @@ body
 }
 
 .hero-btn {
-	transform:scale(1.2);
+	font-size: 170%;
 }
 
 /*----- main section ----*/
@@ -268,6 +272,7 @@ ul.linklist li a {
 
 .hero
 {
+	/*
 	margin:0 auto;
 	text-align:center;
 	z-index:10;
@@ -277,6 +282,7 @@ ul.linklist li a {
 	-webkit-transform: translateY(-60%);
 	-moz-transform: translateY(-50%);
 	-o-transform: translateY(-50%);
+	*/
 
 
 }
