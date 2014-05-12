@@ -29,6 +29,7 @@ body { font-family: Open Sans, Arial; padding: 0px; margin: 0px; background: non
 	font-size: 16px;
 	line-height: 23px;
 	color: #666;
+    background: #fff;
 }
 #cta a { color: #51a351; font-weight: bold; }
 #cta a:hover { color: #52a452; }
