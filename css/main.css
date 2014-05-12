@@ -264,13 +264,6 @@ ul.linklist li a {
 		color:#f87c45;
 	}
 
-.copyright
-{
-	font-size:16px;
-	color:#777;
-	text-align:center;
-}
-
 
 @media (min-width: 320px) and (max-width:767px) {
 /* Logo & Nav*/
@@ -308,13 +301,4 @@ ul.linklist li a {
 }
 
 
-}
-
-@media (max-width: 320px)
-{
-	.banner .carousel-fade .carousel-inner .item {
-
-  background-attachment:scroll;
-
-}
 }
