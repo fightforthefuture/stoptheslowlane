@@ -148,6 +148,15 @@ img.protestors { margin: 50px 0px; max-width: 100%; height: auto; }
 
 .hero-btn {
 	font-size: 170%;
+	margin: 0px 5px;
+}
+.hero-btn.congress {
+	background: #c8595d;
+	border-color: #c8595d;
+}
+.hero-btn.congress:hover {
+	background: #b9585b;
+	border-color: #b9585b;
 }
 
 /*----- main section ----*/
