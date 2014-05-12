@@ -61,7 +61,7 @@
 
 
 		<div id="cta">
-			<h3>Want a slower Internet? Neither do we. Tell Congress: <strong>"<a href="#">Stop the FCC</a> from letting Internet providers extort &amp; slow down the sites we use every day."</strong></h3>
+			<h3>Want a slower Internet? Neither do we. Tell Congress: <strong>"<a href="http://stoptheslowlane.com" target="_blank">Stop the FCC</a> from letting Internet providers extort &amp; slow down the sites we use every day."</strong></h3>
 			<div class="quad_pane">
 				<div class="pane">
 					<div class="pad">
@@ -86,17 +86,20 @@
 			</div>
 			<button class="submit">Send to Congress</button>
 			<small class="left"><a href="#" class="org" target="_blank"></a> will contact you about future campaigns. <a href="#" class="org_privacy" target="_blank">Privacy.</a></small>
-			<small class="right"><a href="#">Want this on your site?</a></small>
+			<small class="right"><a href="http://stoptheslowlane.com" target="_blank">Want this on your site?</a></small>
 		</div>
 
 		<div id="thanks">
-			<h3>Thanks for taking action!</h3>
-			<p>The courts may have ruled against net neutrality, but this is just the beginning. We&#39;ll keep fighting day and night for an open and free internet.</p>
+			<h3>
+				<strong>Thanks. Now, to win, we need millions more people to do what you just did.</strong>
+			</h3>
+			<h3>
+			Congress and the FCC need to hear from everyone, so please, share this action with as many people as you can. And if you have a website or Tumblr,<br/><a href="http://stoptheslowlane.com" target="_blank">add the code to your site</a> right now.
+			</h3>
 			<ul class="socials">
 				<li><a class="social-facebook social-large" target="_blank" title="Share on Facebook" href="http://www.facebook.com/sharer.php?u=https%3A%2F%2Fwww.facebook.com%2Ffightfortheftr%2Fphotos%2Fa.296919493661517.71630.283481148338685%2F751980181488777%2F%3Ftype%3D1%26relevant_count%3D1">Share on Facebook</a></li>
-				<li><a class="social-twitter social-large" target="_blank" title="Share on Twitter" href="https://twitter.com/intent/tweet?hashtags=&text=RT+%40fightfortheftr%3A+FCC+sides+with+Comcast+to+let+ISPs+censor+the+internet.+Tell+the+%40FCC+to+restore+net+neutrality%21&url=https%3A%2F%2Ffftf-cms.herokuapp.com%2Fslowlane-demo%2F&related=fightfortheftr">Share on Twitter</a></li>
+				<li><a class="social-twitter social-large" target="_blank" title="Share on Twitter" href="https://twitter.com/intent/tweet?hashtags=&text=RT+%40fightfortheftr%3A+FCC+sides+with+Comcast+to+let+ISPs+censor+the+internet.+Tell+the+%40FCC+to+restore+net+neutrality%21&url=https%3A%2F%2Fcms.fightforthefuture.org%2Ftellfcc%2F&related=fightfortheftr">Share on Twitter</a></li>
 			</ul>
-			<a class="code" href="#" target="_blank">Add this to your site!</a>
 		</div>
 
 	</div>
@@ -240,6 +243,9 @@
 			var email			= $('#email').val();
 			var street_address	= $('#street_address').val();
 			var postcode		= $('#postcode').val();
+
+			// DEBUG
+			// $('#cta').addClass('animated fadeOutDown'); setTimeout(function() { showThanks(); }, 500); return;
 
 			if (!first_name)
 				val_err('first_name');

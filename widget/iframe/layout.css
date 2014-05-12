@@ -40,6 +40,7 @@ body { font-family: Open Sans, Arial; padding: 0px; margin: 0px; background: non
 	color: black; 
 	font-weight: normal;
 }
+#thanks h3 a { color: #52a452; font-weight: bold; }
 #cta input[type="text"] {
 	background: -moz-linear-gradient(center top , #F0F0F0 0px, #FFF) repeat scroll 0% 0% transparent;
 	background: -webkit-linear-gradient(center top , #F0F0F0 0px, #FFF) repeat scroll 0% 0% transparent;
@@ -69,11 +70,6 @@ body { font-family: Open Sans, Arial; padding: 0px; margin: 0px; background: non
 #cta small.right { position: absolute; bottom: 0px; right: 0px; display: block; font-size: 13px; }
 #cta .quad_pane .pane { display: inline-block; float: left; width: 25%; }
 #cta .quad_pane .pane .pad { padding: 5px; }
-
-#thanks a.code {
-	display: block; position: absolute; width: 100%; left: 0px; bottom: 0px; color: #52a452; font-weight: bold;
-}
-
 
 button {
 	display: inline-block;
