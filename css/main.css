@@ -163,15 +163,15 @@ img.protestors { margin: 50px 0px; max-width: 100%; height: auto; }
 
 div.join {
 	margin-top: 50px;
-	background: #88f;
-	border-top: 1px solid #55d;
-	border-bottom: 1px solid #55d;
+	background: #eef;
+	border-top: 1px solid #aab;
+	border-bottom: 1px solid #aab;
 	color: white;
-	text-shadow: 0px 1px 1px #339;
+	text-shadow: 0px 1px 2px #fff;
 }
 div.join h1 {
 	font-size: 48px;
-	color: white;
+	color: #669;
 	padding: 50px 0px;
 }
 hr { border-color: #ccc; }
