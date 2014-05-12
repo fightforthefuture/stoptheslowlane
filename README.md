@@ -54,7 +54,7 @@ the URL (eg: http://rubbingalcoholic.com/#ALWAYS_SHOW_SL_WIDGET)
 
 Adding your own animations
 --------------------------
-Info coming soon!
+More info coming soon! For now, fork this repo, work on your own improvements to the intro animation, and be in touch.
 
 
 [1]: http://www.stoptheslowlane.com
