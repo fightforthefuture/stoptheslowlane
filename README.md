@@ -23,7 +23,7 @@ to the HEAD section of your page (after all scripts and CSS)
 ```html
 
     <style id="_sl_hide" type="text/css">body { display: none; }</style>
-	<script src="https://fightforthefuture.github.io/stoptheslowlane/widget/slowlane.js></script>
+	<script src="https://fightforthefuture.github.io/stoptheslowlane/widget/slowlane.js"></script>
 ```
 
 If you're feeling extra seditious, there's a special version of the animation
