@@ -1,0 +1,331 @@
+<html>
+<head>
+	<title>SlowLane iframe!</title>
+	<script type="text/javascript" src="jquery-1.11.1.min.js"></script>
+	<link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,300,600,700|Fjalla+One|Domine:400,700|Signika+Negative:400,700|Libre+Baskerville|Tienne:400,900|Junge|Roboto:400,900|Titillium+Web:400,700|Quantico:400,700|ABeeZee|Archivo+Black|Carme|Rufina:400,700|Ubuntu:300,400,500,300italic,400italic,500italic,700italic|Vollkorn:400italic,700italic,400,700|Montserrat:400,700" rel="stylesheet" />
+	<link rel="stylesheet" type="text/css" href="animate.css"/>
+	<link rel="stylesheet" type="text/css" href="layout.css"/>
+	<style type="text/css">
+		/* --- COMCAST ANIMATION CSS --- */
+		#comcast { position: relative; left: 0px; top: 0px; height: 100%; text-align: center; display: none; -webkit-transition: all 1s ease-out; -moz-transition: all 1s ease-out; -o-transition: all 1s ease-out; transition: all 1s ease-out; }
+		#comcast h1 { margin: 0px;	padding: 20px 0px 35px 0px;	color: #444; font-size: 24px; font-weight: normal; }
+		#comcast img.logo {	width: 500px; height: 95px;	margin-bottom: 25px; }
+		#comcast .text { width: 60%; margin-left: auto; margin-right: auto;	font-size: 18px; line-height: 26px; font-weight: bold; color: gray; color: #fff; transition: color .5s linear; -moz-transition: color .5s linear; -webkit-transition: color .5s linear; -o-transition: color .5s linear; -ms-transition: color .5s linear; }
+		#comcast .shrinkable { position: absolute; left: 0px; top: 0px; width: 100%; height: 280px; -webkit-transition: all .5s ease-in-out; -moz-transition: all .5s ease-in-out; -o-transition: all .5s ease-in-out; transition: all .5s ease-in-out; -webkit-transform-origin : 50% 0%; -moz-transform-origin : 50% 0%; -o-transform-origin : 50% 0%; -ms-transform-origin : 50% 0%; transform-origin : 50% 0%; }
+		/* #comcast .shrinkable.shrunk { -moz-transform: scale(.8); -webkit-transform: scale(.8); -o-transform: scale(.8); transform: scale(.8); -ms-transform: scale(.8); } */
+		#comcast a { display: none; color: #ffffff; position: absolute; bottom: 30px; width: 100%; text-align: center; font-size: 20px; font-weight: bold; -webkit-transition: color .75s linear; -moz-transition: color .75s linear; -o-transition: color .75s linear; transition: color .75s linear; }
+		#comcast a.show { color: #0000ff; }
+		#comcast a:hover { }
+
+		/* --- LOADER ANIMATION CSS -- */
+		#loader { position: relative; display: none; height: 100%; left: 0px; top: 0px; -webkit-transition: all 1s ease-out; -moz-transition: all 1s ease-out; -o-transition: all 1s ease-out; transition: all 1s ease-out; }
+		#loader .gutter { width: 100%; height: 100%;}
+		#loader .wrapper { width: 200px; height: 20px; position: absolute; top: 50%; left: 50%; }
+		#loader .border { border: 3px solid #222; height: 100%; width: 100%; position: relative; left: -50%; top: -50%; padding: 4px 3px; }
+		#loader .whitespace { overflow: hidden; height: 100%; width: 100%; margin: 0 auto; overflow: hidden; position: relative; }
+		#loader .line { position: absolute; height: 100%; width: 100%; background-color: black; -webkit-animation: slide 5s steps(40) infinite; -moz-animation: slide 5s steps(40) infinite; animation: slide 5s steps(40) infinite; }
+		#loader p.text { position: absolute; left: 350px; top: 190px; width: 180px; height: 60px; line-height: 23px; font-size: 20px; color: #666;}
+		@keyframes slide { 0% { left: -100%; } 100% { left: 100%; } }
+		@-moz-keyframes slide { 0% { left: -100%; } 100% { left: 100%; } }
+		@-webkit-keyframes slide { 0% { left: -100%; } 100% { left: 100%; } }
+	</style>
+</head>
+<body>
+	<div id="close">&times;</div>
+	<div id="modal">
+
+		<!-- COMCAST ANIMATION MARKUP -->
+		<div id="comcast">
+			<div class="shrinkable">
+				<h1>Thank you for choosing</h1>
+				<img src="monopologo.png" class="logo" alt="Comcast Time Warner"/>
+				<p class="text"></p>
+			</div>
+			<a href="#">MAKE THIS STOP</a>
+		</div>
+
+		<!-- LOADER ANIMATION MARKUP -->
+		<div id="loader">
+			<div class="gutter">
+				<div class="wrapper">
+					<div class="border">
+						<div class="whitespace">
+							<div class="line">
+							</div>
+						</div>
+					</div>
+				</div>
+				<p class="text"></p>
+			</div>
+		</div>
+
+
+		<div id="cta">
+			<h3>Want a slower Internet? Neither do we. Tell Congress: <strong>"<a href="#">Stop the FCC</a> from letting Internet providers extort &amp; slow down the sites we use every day."</strong></h3>
+			<div class="quad_pane">
+				<div class="pane">
+					<div class="pad">
+						<input type="text" id="first_name" placeholder="Full Name"/>
+					</div>
+				</div>
+				<div class="pane">
+					<div class="pad">
+						<input type="text" id="email" placeholder="Email"/>
+					</div>
+				</div>
+				<div class="pane">
+					<div class="pad">
+						<input type="text" id="street_address" placeholder="Street Address"/>
+					</div>
+				</div>
+				<div class="pane">
+					<div class="pad">
+						<input type="text" id="postcode" placeholder="Zip"/>
+					</div>
+				</div>
+			</div>
+			<button class="submit">Send to Congress</button>
+			<small class="left"><a href="#" class="org" target="_blank"></a> will contact you about future campaigns. <a href="#" class="org_privacy" target="_blank">Privacy.</a></small>
+			<small class="right"><a href="#">Want this on your site?</a></small>
+		</div>
+
+		<div id="thanks">
+			<h3>Thanks for taking action!</h3>
+			<p>The courts may have ruled against net neutrality, but this is just the beginning. We&#39;ll keep fighting day and night for an open and free internet.</p>
+			<ul class="socials">
+				<li><a class="social-facebook social-large" target="_blank" title="Share on Facebook" href="http://www.facebook.com/sharer.php?u=https%3A%2F%2Fwww.facebook.com%2Ffightfortheftr%2Fphotos%2Fa.296919493661517.71630.283481148338685%2F751980181488777%2F%3Ftype%3D1%26relevant_count%3D1">Share on Facebook</a></li>
+				<li><a class="social-twitter social-large" target="_blank" title="Share on Twitter" href="https://twitter.com/intent/tweet?hashtags=&text=RT+%40fightfortheftr%3A+FCC+sides+with+Comcast+to+let+ISPs+censor+the+internet.+Tell+the+%40FCC+to+restore+net+neutrality%21&url=https%3A%2F%2Ffftf-cms.herokuapp.com%2Fslowlane-demo%2F&related=fightfortheftr">Share on Twitter</a></li>
+			</ul>
+			<a class="code" href="#" target="_blank">Add this to your site!</a>
+		</div>
+
+	</div>
+</body>
+<script type="text/javascript">
+
+	var animations = {
+		loader: {
+			options: {},
+			init: function(options) {
+				for (var k in options) this.options[k] = options[k];
+				return this;
+			},
+			start: function() {
+				var curIndex = 0;
+				var intervalId = 0;
+				var strings = [
+					'loading...',
+					'just a minute...',
+					'ugh, still loading...',
+					'really?'
+				];
+				var animateText = function() {
+					var text = $('#loader .text');
+					text.html(strings[curIndex]);
+					curIndex = curIndex < strings.length - 1 ? curIndex + 1 : 0;
+
+					if (!intervalId)
+						intervalId = setInterval(animateText, 3750);
+				}
+				animateText();
+				setTimeout(function() {
+					//$('#loader').css('opacity', 0);
+					$('#loader .gutter').addClass('animated fadeOutDown');
+					$('#modal').addClass('shadow');
+					sendMessage('fadeBackground');
+					setTimeout(function() {
+						$('#loader .gutter').addClass('animated fadeOutDown');
+						showCTA();
+					}, 500);
+				}, 14000);
+
+				$('#loader').show();
+				$('#modal').addClass('visible');
+
+
+			}
+		},
+		comcast: {
+			options: {},
+			init: function(options) {
+				for (var k in options) this.options[k] = options[k];
+				return this;
+			},
+			start: function() {
+				var curIndex = 0;
+				var intervalId = 0;
+				var strings = [
+					'Your web site is important to us.',
+					'Please wait while we prioritize traffic from our preferred partners.',
+					'Want this site to load faster? Subscribe to our Advantage GoldExtra++&trade; Plan!'
+				];
+				var animateText = function() {
+					var text = $('#comcast .text');
+					text.html(strings[curIndex]);
+					curIndex = curIndex < strings.length - 1 ? curIndex + 1 : 0;
+					setTimeout(function() {	text.css('color', 'gray'); }, 10);
+					setTimeout(function() {	text.css('color', 'white');	}, 4000);
+
+					if (!intervalId)
+						intervalId = setInterval(animateText, 5500);
+				}
+				var shrink = function() {
+					$('#comcast .shrinkable').addClass('shrunk');
+				}
+				var showLink = function() {
+					$('#comcast a').css('display', 'block');
+					setTimeout(function() {
+						$('#comcast a').addClass('show');
+					}, 100);
+					$('#comcast a').click(function(e) {
+						e.preventDefault();
+						$('#comcast').css('display', 'none');
+						showCTA();
+					});
+				}
+				$('#comcast').show();
+				$('#modal').addClass('visible shadow');
+				setTimeout(animateText, 2000);
+				setTimeout(shrink, 12000);
+				setTimeout(showLink, 12500);
+
+			}
+		}
+	}
+
+	var showCTA = function() {
+		var orgs = [
+			{
+				'name': 'Fight for the Future',
+				'tag': 'fftf-fcc-widget',
+				'url': 'http://www.fightforthefuture.org',
+				'privacy_url': 'http://www.fightforthefuture.org/privacy/'
+			},
+			{
+				'name': 'Demand Progress',
+				'tag': 'demand-progress-fcc-widget',
+				'url': 'http://www.demandprogress.org',
+				'privacy_url': 'http://www.demandprogress.org/privacy/'
+			},
+			{
+				'name': 'MoveOn.org',
+				'tag': 'moveon-fcc-widget',
+				'url': 'http://www.moveon.org',
+				'privacy_url': 'http://www.moveon.org/privacy.html'
+			},
+			{
+				'name': 'Free Press',
+				'tag': 'freepress-fcc-widget',
+				'url': 'http://www.freepress.net',
+				'privacy_url': 'https://www.freepress.net/privacy-copyright'
+			}
+		];
+		var org = orgs[Math.floor(Math.random() * 4)];
+		$('a.org').text(org.name);
+		$('a.org').attr('href', org.url);
+		$('a.org_privacy').attr('href', org.privacy_url);
+
+		$('#cta').css('display', 'block');
+		$('#cta').addClass('animated fadeInDown');
+				
+		$('#close').css('opacity', 1);
+		$('#close').click(function() {
+			sendMessage('stop');
+		});
+
+		$('button.submit').click(function(e) {
+			e.preventDefault();
+
+			var first_name		= $('#first_name').val();
+			var email			= $('#email').val();
+			var street_address	= $('#street_address').val();
+			var postcode		= $('#postcode').val();
+
+			if (!first_name)
+				val_err('first_name');
+			if (!email)
+				val_err('email');
+			if (!street_address)
+				val_err('street_address');
+			if (!postcode)
+				val_err('postcode');
+			if (!first_name || !email || !street_address || !postcode)
+				return;
+
+			$("button.submit").attr("disabled", "disabled");
+			$('button.submit').addClass('disabled');
+			$('button.submit').text('Working...');
+
+			$.ajax('https://platformzz.herokuapp.com/api/movements/1/salsa', {
+				type: 'POST',
+				data: {
+					'csrfmiddlewaretoken': 'bvBrPxrWHM3iqcQQbLFAD7N7WZrJMBE3',
+					'member[language]': 'en',
+					'salsa': true,
+					'language_id': 'en',
+					'member[movement_id]': 1,
+					'member[user_agent]': '',
+					'member[ip_address]': '',
+					'guard': '',
+					'action': 1,
+					'hp_enabled': true,
+					'hp_disabled': false,
+					'member[first_name]': first_name,
+					'member[email]': email,
+					'member[street_address]': street_address,
+					'member[postcode]': postcode,
+					'tag': org.tag
+				},
+				complete: function(xhr, status) {
+					$('#cta').addClass('animated fadeOutDown');
+					setTimeout(function() { showThanks(); }, 500);		
+				}
+			});
+
+		});
+	}
+
+	var showThanks = function() {
+		$('#thanks').css('display', 'block');
+		$('#thanks').addClass('animated fadeInDown');
+	}
+
+	var val_err = function(id) {
+		$('#' + id).addClass('error');
+	}
+
+	window.addEventListener('message', function(e) {
+		if (!e.data || !e.data.SL_WIDGET_MSG)
+			return;
+
+		delete e.data.SL_WIDGET_MSG;
+
+		switch (e.data.requestType) {
+			case 'putAnimation':
+				animations[e.data.modalAnimation].init(e.data).start();
+				break;
+		}
+	});
+
+	var sendMessage = function(requestType, data)
+	{
+		data || (data = {});
+		data.requestType = requestType;
+		data.SL_IFRAME_MSG = true;
+		window.postMessage(data, '*');
+	}
+
+	$(document).ready(function() {
+		sendMessage('getAnimation');
+	});
+
+	// For quick test of the CTA form, add #SHOW_CTA to the URL (before load)
+	if (window.location.href.indexOf('SHOW_CTA') != -1)
+	{
+		$('#modal').css('opacity', 1);
+		$('body').css('background', '#eee');
+		showCTA();
+	}
+
+</script>
+</html>
