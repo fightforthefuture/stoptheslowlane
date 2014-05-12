@@ -312,7 +312,7 @@
 		data || (data = {});
 		data.requestType = requestType;
 		data.SL_IFRAME_MSG = true;
-		window.postMessage(data, '*');
+		parent.postMessage(data, '*');
 	}
 
 	$(document).ready(function() {
@@ -326,6 +326,5 @@
 		$('body').css('background', '#eee');
 		showCTA();
 	}
-
 </script>
 </html>

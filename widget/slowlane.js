@@ -139,14 +139,21 @@ var _sl_util = {
 			data.SL_WIDGET_MSG = true;
 			iframe.contentWindow.postMessage(data, '*');
 		}
-		iframe.contentWindow.addEventListener('message', function(e) {
+
+		var eventMethod = window.addEventListener ? "addEventListener" : "attachEvent";
+		var eventer = window[eventMethod];
+		var messageEvent = eventMethod == "attachEvent" ? "onmessage" : "message";
+
+		eventer(messageEvent,function(e) {
 			if (!e.data || !e.data.SL_IFRAME_MSG)
 				return;
+
+			delete e.data.SL_IFRAME_MSG;
 
 			switch (e.data.requestType) {
 				case 'getAnimation':
 					iframe.style.display = 'block';
-					sendMessage('putAnimation', animation.options );
+					sendMessage('putAnimation', animation.options);
 					break;
 				case 'stop':
 					animation.stop();
@@ -156,7 +163,8 @@ var _sl_util = {
 						animation[e.data.requestType]();
 					break;
 			}
-		});
+		}, false);
+
 	},
 	setCookie: function(name,val,exdays)
 	{
