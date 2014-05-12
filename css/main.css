@@ -27,6 +27,9 @@ body
   opacity: 0.2;
   width:33.333%;
   height:100%;
+  word-wrap: break-word;
+  font-family: Courier New;
+  font-size: 10px;
 }
 
 #stream-one {

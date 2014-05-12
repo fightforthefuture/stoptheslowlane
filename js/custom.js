@@ -1,117 +1,49 @@
 (function(){
   "use strict";
-//Banner height
-$(document).ready(function() {
+	//Banner height
+	$(document).ready(function() {
 
-	var viewport_width = window.innerWidth;
-	var viewport_height = window.innerHeight;
+		/*
+		var viewport_width = window.innerWidth;
+		var viewport_height = window.innerHeight;
 
-	$('.banner,.hero').height((viewport_height));
+		if (viewport_height > 800) viewport_height =800;
+
+		$('.banner,.hero').height((viewport_height));
 		$(window).resize(function() {
 		  var viewport_width = window.innerWidth;
 		  var viewport_height = window.innerHeight;
 			$('.banner,.carousel .item').css('min-height', viewport_height);
 		});
+		*/
 	});
 
 	// Below lies horrible code that needs to be refactored. Read at your own risk.
 
-	var initStreamOne = function() {
+	var initStream = function(elem, delay) {
 
 		var rset = "01";
-
 		var width = 250;
-		var height = 30;
+		var iterations = 0;
+		var MAX_ITERATIONS = 30; // should be adjusted to fill 27" cinema display
+		var intervalId = setInterval(function() {
+			if (iterations > MAX_ITERATIONS)
+				return clearInterval(intervalId);
+			else				
+				iterations++;
 
-		function setMetrics(){
-		  var em = document.getElementById("stream-one");
-		  var cw = em.clientWidth;
-		  var ch = em.clientHeight;
-		  var bw = document.body.clientWidth;
-		  var bh = document.body.clientHeight;
-		  width = Math.floor(bw/cw);
-		  height = Math.floor(bh/ch);
-		}
+			var buf = [];
 
-		setInterval(function(){
-		  var buf = [];
-		  for(var i = 0; i<width; i++){
-		    buf[i]=rset[Math.floor(Math.random()*rset.length)]; 
-		  }
-		  
-		  var cur = document.getElementById("cascade-one").textContent;
-		  while((cur.match(/\n/g)||[]).length >= height)
-		    cur = cur.replace(/[^\n]*\n/,'')
-		document.getElementById("cascade-one").textContent =
-		    cur + buf.join('');},
-		  50);
+			for(var i = 0; i < width; i++)
+				buf[i]=rset[Math.floor(Math.random()*rset.length)]; 
+			
+		  	$("#"+elem).text($("#"+elem).text() + buf.join(''));
+		}, delay);
 	}
 
-	var initStreamTwo = function() {
-
-		var rset = "01";
-
-		var width = 250;
-		var height = 30;
-
-		function setMetrics(){
-		  var em = document.getElementById("stream-two");
-		  var cw = em.clientWidth;
-		  var ch = em.clientHeight;
-		  var bw = document.body.clientWidth;
-		  var bh = document.body.clientHeight;
-		  width = Math.floor(bw/cw);
-		  height = Math.floor(bh/ch);
-		}
-
-		setInterval(function(){
-		  var buf = [];
-		  for(var i = 0; i<width; i++){
-		    buf[i]=rset[Math.floor(Math.random()*rset.length)]; 
-		  }
-		  
-		  var cur = document.getElementById("cascade-two").textContent;
-		  while((cur.match(/\n/g)||[]).length >= height)
-		    cur = cur.replace(/[^\n]*\n/,'')
-		document.getElementById("cascade-two").textContent =
-		    cur + buf.join('');},
-		  300);
-	}
-
-	var initStreamThree = function() {
-
-		var rset = "01";
-
-		var width = 250;
-		var height = 30;
-
-		function setMetrics(){
-		  var em = document.getElementById("stream-three");
-		  var cw = em.clientWidth;
-		  var ch = em.clientHeight;
-		  var bw = document.body.clientWidth;
-		  var bh = document.body.clientHeight;
-		  width = Math.floor(bw/cw);
-		  height = Math.floor(bh/ch);
-		}
-
-		setInterval(function(){
-		  var buf = [];
-		  for(var i = 0; i<width; i++){
-		    buf[i]=rset[Math.floor(Math.random()*rset.length)]; 
-		  }
-		  
-		  var cur = document.getElementById("cascade-three").textContent;
-		  while((cur.match(/\n/g)||[]).length >= height)
-		    cur = cur.replace(/[^\n]*\n/,'')
-		document.getElementById("cascade-three").textContent =
-		    cur + buf.join('');},
-		  900);
-	}
-
-	initStreamOne();
-	initStreamTwo();
-	initStreamThree();
+	initStream('cascade-one', 50);
+	initStream('cascade-two', 300);
+	initStream('cascade-three', 900);
 	
 
 
