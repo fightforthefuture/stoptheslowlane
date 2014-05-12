@@ -8,7 +8,6 @@
         <link href="css/bootstrap.min.css" rel="stylesheet">
         <!--Custom CSS-->
         <link href="css/main.css" rel="stylesheet">
-        <link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen" />
         <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" type="text/css" media="screen" />
         <!--Google Font-->
         <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,700,300' rel='stylesheet' type='text/css'>        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -19,6 +18,24 @@
         <![endif]-->
     </head>
     <body>
+
+        <div class="modal fade" id="instructions" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">Installation Instructions</h4>
+              </div>
+              <div class="modal-body">
+                <p>One fine body&hellip;</p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Done</button>
+              </div>
+            </div><!-- /.modal-content -->
+          </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
 
         <section class="banner">
 
@@ -39,18 +56,11 @@
                         </p>
                         <br><br>
                         <div>
-                            <a class="btn btn-primary btn-lg hero-btn learn-more" href="#">See it in Action</a>
+                            <a class="btn btn-primary btn-lg hero-btn learn-more" href="http://rubbingalcoholic.com/#ALWAYS_SHOW_SL_WIDGET" target="_blank">See it in Action</a>
 
-                            <div class="btn-group">
-                              <button class="btn btn-success btn-lg hero-btn dropdown-toggle" type="button" data-toggle="dropdown">
-                                Get The Code <span class="caret"></span>
-                              </button>
-                              <ul class="dropdown-menu">
-                                <li><a href="#">Any Website</a></li>
-                                <li><a href="#">Tumblr</a></li>
-                                <li><a href="#">Wordpress</a></li>
-                              </ul>
-                            </div>
+                            <button class="btn btn-success btn-lg hero-btn dropdown-toggle" type="button" data-toggle="modal" data-target="#instructions">
+                                Get The Code
+                            </button>
 
                         </div>
                     </div>
@@ -107,9 +117,9 @@
                 <div class="col-lg-pull-6 col-md-6 col-sm-12 col-xs-12">
                     <h2>1. Add slowdown.js to Your Website</h2>
                     <div class="txt">
-                        <pre><code>&lt;script src=&quot;https://fightforthefuture.org/slowdown.js&gt;&lt;/script&gt;</code></pre>
+                        <pre><code>&lt;script src=&quot;https://fightforthefuture.github.io/stoptheslowlane/widget/slowlane.js&gt;&lt;/script&gt;</code></pre>
 
-                        Add this line of HTML inside your website's &lt;head&gt; tag, after any javascript or stylesheet tags. You can also install the Wordpress plugin. <a href="#">See it in action</a> or <a href="#">Get detailed installation instructions</a>.
+                        Add this line of HTML inside your website's &lt;head&gt; tag, after any javascript or stylesheet tags. You can also install the Wordpress plugin. <a href="http://rubbingalcoholic.com/#ALWAYS_SHOW_SL_WIDGET" target="blank">See it in action</a> or <a href="#" data-toggle="modal" data-target="#instructions">Get detailed installation instructions</a>.
                     </div>
                 </div>
             </div>
