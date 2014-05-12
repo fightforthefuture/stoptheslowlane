@@ -24,10 +24,23 @@
             <div class="modal-content">
               <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <h4 class="modal-title">Installation Instructions</h4>
+                <h2 class="modal-title">Installation Instructions</h2>
               </div>
               <div class="modal-body">
-                <p>One fine body&hellip;</p>
+                <p>
+                    <strong>Embed this HTML code inside the HEAD tag (important) of your website:</strong>
+
+                    <pre><code>&lt;style id=&quot;_sl_hide&quot; type=&quot;text/css&quot;&gt;body { display: none; }&lt;/style&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+    var _sl_options = {
+        animation: &#39;loader&#39; // can be &#39;loader&#39; or &#39;blur&#39;
+    }
+&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;https://fightforthefuture.github.io/stoptheslowlane/widget/slowlane.js&quot;&gt;&lt;/script&gt;</code></pre>
+
+                    The first JavaScript block (with the _sl_options variable) is optional. It  lets you toggle between the two animations for the Slow Lane demo loading (the default is the "loader" animation). The non-default one is the Comcast/Time Warner animation with blur. <br><br>
+                    We'll be adding more animations over time. We invite you to fork and add your own!
+                </p>
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
