@@ -10,7 +10,7 @@ $(document).ready(function() {
 		$(window).resize(function() {
 		  var viewport_width = window.innerWidth;
 		  var viewport_height = window.innerHeight;
-			$('.banner,.carousel .item').height((viewport_height));
+			$('.banner,.carousel .item').css('min-height', viewport_height);
 		});
 	});
 
