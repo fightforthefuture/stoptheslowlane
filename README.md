@@ -1,4 +1,4 @@
-#StopTheSlowLane Widget
+StopTheSlowLane Widget
 =======================
 #### Slowing down the web to protest the FCC and save Net Neutrality!
 
