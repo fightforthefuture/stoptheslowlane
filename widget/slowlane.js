@@ -1,6 +1,6 @@
-_sl_options || (_sl_options = {});
-_sl_options.iframe_base_path || (_sl_options.iframe_base_path = 'https://fightforthefuture.github.io/stoptheslowlane/widget/iframe');
-_sl_options.animation || (_sl_options.animation = 'loader');
+if (typeof _sl_options == "undefined") _sl_options = {};
+if (typeof _sl_options.iframe_base_path == "undefined") _sl_options.iframe_base_path = 'https://fightforthefuture.github.io/stoptheslowlane/widget/iframe';
+if (typeof _sl_options.animation == "undefined") _sl_options.animation = 'loader';
 
 var _sl_animations = {
 	loader: {
