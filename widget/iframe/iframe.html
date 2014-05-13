@@ -93,14 +93,16 @@
 
 		<div id="thanks">
 			<h3>
-				<strong>Thanks. Now, to win, we need millions more people to do what you just did.</strong>
+				<strong>Thanks for writing Congress. Now can you call them?</strong>
 			</h3>
-			<h3>
-			Congress and the FCC need to hear from everyone, so please, share this action with as many people as you can. And if you have a website or Tumblr,<br/><a href="http://stoptheslowlane.com" target="_blank">add the code to your site</a> right now.
-			</h3>
+			<h3>Dial <a href="tel:+12022243121">(202) 224-3121</a></h3>
+			<p>
+			Ask to be connected to your Senators. Once connected, say "Hi, My name is ______, and I am your constituent. I expect your office to ensure that the FCC does the right thing to preserve the open Internet as it is now. Internet providers should not be able to slow down the sites I visit every day. Thank you.”
+			</p>
 			<ul class="socials">
 				<li><a class="social-facebook social-large" target="_blank" title="Share on Facebook" href="http://www.facebook.com/sharer.php?u=https%3A%2F%2Fwww.facebook.com%2Ffightfortheftr%2Fphotos%2Fa.296919493661517.71630.283481148338685%2F751980181488777%2F%3Ftype%3D1%26relevant_count%3D1">Share on Facebook</a></li>
 				<li><a class="social-twitter social-large" target="_blank" title="Share on Twitter" href="https://twitter.com/intent/tweet?hashtags=&text=RT+%40fightfortheftr%3A+FCC+sides+with+Comcast+to+let+ISPs+censor+the+internet.+Tell+the+%40FCC+to+restore+net+neutrality%21&url=https%3A%2F%2Fcms.fightforthefuture.org%2Ftellfcc%2F&related=fightfortheftr">Share on Twitter</a></li>
+				<li><a class="get-code social-large" target="_blank" title="Get the code!" href="http://www.stoptheslowlane.com">Get the code</a></li>
 			</ul>
 		</div>
 
@@ -230,19 +232,13 @@
 				'privacy_url': 'http://www.demandprogress.org/privacy/'
 			},
 			{
-				'name': 'MoveOn.org',
-				'tag': 'moveon-fcc-widget',
-				'url': 'http://www.moveon.org',
-				'privacy_url': 'http://www.moveon.org/privacy.html'
-			},
-			{
 				'name': 'Free Press',
 				'tag': 'freepress-fcc-widget',
 				'url': 'http://www.freepress.net',
 				'privacy_url': 'https://www.freepress.net/privacy-copyright'
 			}
 		];
-		var org = orgs[Math.floor(Math.random() * 4)];
+		var org = orgs[Math.floor(Math.random() * 3)];
 		$('a.org').text(org.name);
 		$('a.org').attr('href', org.url);
 		$('a.org_privacy').attr('href', org.privacy_url);
