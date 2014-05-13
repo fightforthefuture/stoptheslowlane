@@ -232,19 +232,13 @@
 				'privacy_url': 'http://www.demandprogress.org/privacy/'
 			},
 			{
-				'name': 'MoveOn.org',
-				'tag': 'moveon-fcc-widget',
-				'url': 'http://www.moveon.org',
-				'privacy_url': 'http://www.moveon.org/privacy.html'
-			},
-			{
 				'name': 'Free Press',
 				'tag': 'freepress-fcc-widget',
 				'url': 'http://www.freepress.net',
 				'privacy_url': 'https://www.freepress.net/privacy-copyright'
 			}
 		];
-		var org = orgs[Math.floor(Math.random() * 4)];
+		var org = orgs[Math.floor(Math.random() * 3)];
 		$('a.org').text(org.name);
 		$('a.org').attr('href', org.url);
 		$('a.org_privacy').attr('href', org.privacy_url);
