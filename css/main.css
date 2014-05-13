@@ -368,6 +368,7 @@ ul.linklist li a {
 }
 @media only screen 
 and (max-width : 470px) {
+	img.github { display: none; }
 	.share_bar {
 		display: none;
 	}
