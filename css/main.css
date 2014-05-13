@@ -179,6 +179,13 @@ img.protestors { margin: 50px 0px; max-width: 100%; height: auto; }
 	font-size: 22px;
 	color: white;
 }
+@media only screen 
+and (max-width : 470px) {
+	.share_bar .hashtag {
+		font-size: 16px;
+		top: 15px;
+	}
+}
 .share_bar .social {
 	display: block;
 	float: right;
