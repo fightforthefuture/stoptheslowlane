@@ -179,14 +179,7 @@ img.protestors { margin: 50px 0px; max-width: 100%; height: auto; }
 	font-size: 22px;
 	color: white;
 }
-@media only screen 
-and (max-width : 470px) {
-	.share_bar .hashtag {
-		display: none;
-		font-size: 13px;
-		top: 17px;
-	}
-}
+
 .share_bar .social {
 	display: block;
 	float: right;
@@ -338,38 +331,51 @@ ul.linklist li a {
 /* Logo & Nav*/
 
 
-.hero
-{
-	/*
-	margin:0 auto;
-	text-align:center;
-	z-index:10;
-	width:100%;
-	top: 50%;
-	padding-top:50%;
-	-webkit-transform: translateY(-60%);
-	-moz-transform: translateY(-50%);
-	-o-transform: translateY(-50%);
-	*/
+	.hero
+	{
+		/*
+		margin:0 auto;
+		text-align:center;
+		z-index:10;
+		width:100%;
+		top: 50%;
+		padding-top:50%;
+		-webkit-transform: translateY(-60%);
+		-moz-transform: translateY(-50%);
+		-o-transform: translateY(-50%);
+		*/
+
+
+	}
+
+	.hero h1
+	{
+		font-size:32px;
+		line-height:30px;
+		color:#fff;
+		font-weight:900;
+		margin:0px;
+		text-shadow:1px 2px 2px rgba(0,0,0,.6);
+	}
+
+	.hero p
+	{
+		font-size:18px;
+		color:#fff;
+	}
 
 
 }
-
-.hero h1
-{
-	font-size:32px;
-	line-height:30px;
-	color:#fff;
-	font-weight:900;
-	margin:0px;
-	text-shadow:1px 2px 2px rgba(0,0,0,.6);
-}
-
-.hero p
-{
-	font-size:18px;
-	color:#fff;
-}
-
-
+@media only screen 
+and (max-width : 470px) {
+	.share_bar {
+		display: none;
+	}
+	.share_bar .hashtag {
+		font-size: 16px;
+		top: 15px;
+	}
+	.banner {
+		margin-top: 0px;
+	}
 }
