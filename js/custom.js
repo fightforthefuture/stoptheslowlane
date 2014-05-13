@@ -39,7 +39,7 @@
 		}
 
 		initStream('cascade-one', 50);
-		initStream('cascade-two', 300);
+		initStream('cascade-two', 400);
 		initStream('cascade-three', 900);
 
 	});
