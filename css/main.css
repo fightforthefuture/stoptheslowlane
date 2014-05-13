@@ -74,6 +74,7 @@ strong {
 
 .banner {
 	position: relative;
+	margin-top: 50px;
 }
 
 .backface {
@@ -160,6 +161,32 @@ img.protestors { margin: 50px 0px; max-width: 100%; height: auto; }
 }
 
 /*----- main section ----*/
+.share_bar { 
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	background-color: #222;
+	border-bottom: 1px solid rgba(255, 255, 255, .3);
+	padding: 10px;
+	z-index: 9001; /* WHAT, 9000!? There's no way that can be right. Can it? */
+	text-align: right;
+}
+.share_bar .hashtag {
+	position: absolute;
+	left: 20px;
+	top: 9px;
+	font-size: 22px;
+	color: white;
+}
+.share_bar .social {
+	display: block;
+	float: right;
+	margin-top: 5px;
+}
+.share_bar .social.fb-share-button {
+	margin-right: 10px;
+}
 #main {
 	z-index:999;
 }
