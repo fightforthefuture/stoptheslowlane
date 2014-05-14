@@ -61,7 +61,6 @@ var _sl_animations = {
 
 			var div = document.createElement('div');
 			div.className = '_sl_overlay _sl_visible';
-			div.onclick = _sl_animations.blur.stop;
 			div.id = '_sl_overlay';
 			document.body.appendChild(div);
 			
@@ -192,6 +191,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
 	var css_hide = document.getElementById('_sl_hide');
 	if (css_hide) css_hide.parentNode.removeChild(css_hide);
+	
+	// JL NOTE ~ emergency disabled widget on mobile for now
+	if( /Android|webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) )
+		return;
 
 	if (_sl_util.getCookie('_SL_WIDGET_SHOWN') && window.location.href.indexOf('ALWAYS_SHOW_SL_WIDGET') == -1)
 		return;
