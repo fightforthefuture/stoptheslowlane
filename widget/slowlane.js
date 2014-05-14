@@ -192,7 +192,7 @@ document.addEventListener('DOMContentLoaded', function () {
 	var css_hide = document.getElementById('_sl_hide');
 	if (css_hide) css_hide.parentNode.removeChild(css_hide);
 	
-	// JL NOTE ~ emergency disabled widget on mobile for now
+	// JL NOTE ~ emergency disabled widget on mobile for now...
 	if( /Android|webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) )
 		return;
 
