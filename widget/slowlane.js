@@ -193,15 +193,15 @@ document.addEventListener('DOMContentLoaded', function () {
 	if (css_hide) css_hide.parentNode.removeChild(css_hide);
 	
 	// JL NOTE ~ emergency disabled widget on mobile for now...
-	if( /Android|webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) )
-		return;
+	//if( /Android|webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) )
+	//	return;
 
 	if (_sl_util.getCookie('_SL_WIDGET_SHOWN') && window.location.href.indexOf('ALWAYS_SHOW_SL_WIDGET') == -1)
 		return;
 	else
 		_sl_util.setCookie('_SL_WIDGET_SHOWN', 'true', 365);
 
-	_sl_util.injectCSS('_sl_iframe_css', '#_sl_iframe { position: fixed; left: 50%; margin-left: -375px; margin-top: -250px; top: 50%; width: 750px; height: 400px; z-index: 20000000; }');
+	_sl_util.injectCSS('_sl_iframe_css', '#_sl_iframe { position: fixed; left: 50%; margin-left: -375px; margin-top: -250px; top: 50%; width: 750px; height: 400px; z-index: 20000000; } @media (max-width:749px) { #_sl_iframe { position: fixed; left: 0px; top: 0px; width: 100%; height: 100%; margin-left: 0px; margin-top: 0px; } }');
 
 	var animation = _sl_animations[_sl_options.animation].init(_sl_options).start();
 
