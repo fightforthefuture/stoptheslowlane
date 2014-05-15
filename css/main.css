@@ -239,6 +239,13 @@ iframe.widget_preview {
 	height: 400px;
 	margin: 0px auto;
 }
+@media (max-width:749px) {
+	iframe.widget_preview {
+		width: 100%;
+		height: 480px;
+		margin: 0px auto;
+	}
+}
 img.anigif { border: 1px dotted gray; }
 p.center { text-align: center; }
 
