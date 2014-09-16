@@ -10,12 +10,17 @@
 		#comcast { position: relative; left: 0px; top: 0px; height: 100%; text-align: center; display: none; -webkit-transition: all 1s ease-out; -moz-transition: all 1s ease-out; -o-transition: all 1s ease-out; transition: all 1s ease-out; }
 		#comcast h1 { margin: 0px;	padding: 20px 0px 35px 0px;	color: #444; font-size: 24px; font-weight: normal; }
 		#comcast img.logo {	width: 500px; height: 95px;	margin-bottom: 25px; }
-		#comcast .text { width: 75%; margin-left: auto; margin-right: auto;	font-size: 18px; line-height: 26px; font-weight: bold; color: gray; color: #fff; transition: color .5s linear; -moz-transition: color .5s linear; -webkit-transition: color .5s linear; -o-transition: color .5s linear; -ms-transition: color .5s linear; }
-		#comcast .shrinkable { position: absolute; left: 0px; top: 0px; width: 100%; height: 280px; -webkit-transition: all .5s ease-in-out; -moz-transition: all .5s ease-in-out; -o-transition: all .5s ease-in-out; transition: all .5s ease-in-out; -webkit-transform-origin : 50% 0%; -moz-transform-origin : 50% 0%; -o-transform-origin : 50% 0%; -ms-transform-origin : 50% 0%; transform-origin : 50% 0%; }
+		#comcast .text { width: 72%; margin-left: auto; margin-right: auto;	font-size: 18px; line-height: 26px; font-weight: bold; color: gray; color: #fff; transition: color .5s linear; -moz-transition: color .5s linear; -webkit-transition: color .5s linear; -o-transition: color .5s linear; -ms-transition: color .5s linear; }
 		/* #comcast .shrinkable.shrunk { -moz-transform: scale(.8); -webkit-transform: scale(.8); -o-transform: scale(.8); transform: scale(.8); -ms-transform: scale(.8); } */
 		#comcast a { display: none; color: #ffffff; position: absolute; bottom: 30px; width: 100%; text-align: center; font-size: 20px; font-weight: bold; -webkit-transition: color .75s linear; -moz-transition: color .75s linear; -o-transition: color .75s linear; transition: color .75s linear; }
 		#comcast a.show { color: #0000ff; }
 		#comcast a:hover { }
+		@media (max-width:749px) {
+			#comcast h1 { font-size: 1.6em; }
+			#comcast img.logo { max-width: 90%; height: auto; }
+			#comcast .text { font-size: 1.2em; }
+			#comcast a { font-size: 1.8em; }
+		}
 
 		/* --- LOADER ANIMATION CSS -- */
 		#loader { position: relative; display: none; height: 100%; left: 0px; top: 0px; -webkit-transition: all 1s ease-out; -moz-transition: all 1s ease-out; -o-transition: all 1s ease-out; transition: all 1s ease-out; }
@@ -29,6 +34,11 @@
 		@keyframes slide { 0% { left: -100%; } 100% { left: 100%; } }
 		@-moz-keyframes slide { 0% { left: -100%; } 100% { left: 100%; } }
 		@-webkit-keyframes slide { 0% { left: -100%; } 100% { left: 100%; } }
+		@media (max-width:749px) {
+			#loader .gutter { width: 100%; height: 100%; box-sizing:border-box; -moz-box-sizing:border-box; }
+			#loader .warning { font-size: 1em; display: block; width: 100%; bottom: 10px; left: 0px; margin-left: 0px; background: transparent; padding: 0px 15px; box-sizing:border-box; -moz-box-sizing:border-box; }
+			#loader p.text { font-size: 1.3em; left: 50%; top: 50%; margin-top: 35px; margin-left: -90px; }
+		}
 	</style>
 </head>
 <body>
@@ -37,11 +47,11 @@
 
 		<!-- COMCAST ANIMATION MARKUP -->
 		<div id="comcast">
-			<div class="shrinkable">
-				<h1>Thank you for choosing</h1>
-				<img src="monopologo.png" class="logo" alt="Comcast Time Warner"/>
-				<p class="text"></p>
-			</div>
+			
+			<h1>Thank you for choosing</h1>
+			<img src="monopologo.png" class="logo" alt="Comcast Time Warner"/>
+			<p class="text"></p>
+			
 			<a href="#">MAKE THIS STOP</a>
 		</div>
 
@@ -63,7 +73,7 @@
 
 
 		<div id="cta">
-			<h3>Want a slower Internet? Neither do we. Tell Congress: <strong>"<a href="http://stoptheslowlane.com" target="_blank">Stop the FCC</a> from letting Internet providers extort &amp; slow down the sites we use every day."</strong></h3>
+			<h3>Want a slower Internet? Neither do we. Tell Congress:<br/><strong>"<a href="http://stoptheslowlane.com" target="_blank">Stop the FCC</a> from letting Internet providers extort &amp; slow down the sites we use every day."</strong></h3>
 			<div class="quad_pane">
 				<div class="pane">
 					<div class="pad">
@@ -177,7 +187,7 @@
 				var intervalId = 0;
 				var strings = [
 					'Your web site is important to us.',
-					'Please wait while we prioritize traffic from our<br/>preferred partners.',
+					'Please wait while we prioritize traffic from our preferred partners.',
 					'Sorry! This web site is not included in your plan. Please upgrade to our Advantage Gold 9000++&trade; package.'
 				];
 				var animateText = function() {
@@ -238,7 +248,8 @@
 				'privacy_url': 'https://www.freepress.net/privacy-copyright'
 			}
 		];
-		var org = orgs[Math.floor(Math.random() * 3)];
+		// var org = orgs[Math.floor(Math.random() * 3)];
+		var org = orgs[0];
 		$('a.org').text(org.name);
 		$('a.org').attr('href', org.url);
 		$('a.org_privacy').attr('href', org.privacy_url);
@@ -280,7 +291,7 @@
 			$('button.submit').addClass('disabled');
 			$('button.submit').text('Working...');
 
-			$.ajax('https://platformzz.herokuapp.com/api/movements/1/salsa', {
+			$.ajax('https://action.fightforthefuture.org/api/movements/1/salsa', {
 				type: 'POST',
 				data: {
 					'csrfmiddlewaretoken': 'bvBrPxrWHM3iqcQQbLFAD7N7WZrJMBE3',

@@ -57,7 +57,10 @@ var _sl_animations = {
 			var doc = new DOMParser().parseFromString(svg, 'application/xml');
 			document.body.appendChild(document.body.ownerDocument.importNode(doc.documentElement, true));
 
-			_sl_util.injectCSS('_sl_css', '._sl_overlay { position: fixed; background: black; left: 0px; top: 0px; width: 100%; height: 100%; z-index: 9001; opacity: 0; transition: opacity 1s linear; -ms-transition: opacity 1s linear; -o-transition: opacity 1s linear; -moz-transition: opacity 1s linear; -webkit-transition: opacity 1s linear; } ._sl_visible { opacity: .4; } ._sl_blur_30 { -webkit-filter: blur(30px); -moz-filter: blur(30px); -ms-filter: blur(30px); -o-filter: blur(30px); filter: blur(30px); filter: url(#_sl_blur_30); }._sl_blur_15 { -webkit-filter: blur(15px); -moz-filter: blur(15px); -ms-filter: blur(15px); -o-filter: blur(15px); filter: blur(15px); filter: url(#_sl_blur_15); } ._sl_blur_7 { -webkit-filter: blur(7px); -moz-filter: blur(7px); -ms-filter: blur(7px); -o-filter: blur(7px); filter: blur(7px); filter: url(#_sl_blur_7); } ._sl_blur_3 { -webkit-filter: blur(3px); -moz-filter: blur(3px); -ms-filter: blur(3px); -o-filter: blur(3px); filter: blur(3px); filter: url(#_sl_blur_3); } ._sl_blur_1 { -webkit-filter: blur(1px); -moz-filter: blur(1px); -ms-filter: blur(1px); -o-filter: blur(1px); filter: blur(1px); filter: url(#_sl_blur_1); }');
+			if (!_sl_util.isMobile())
+				_sl_util.injectCSS('_sl_css', '._sl_overlay { position: fixed; background: black; left: 0px; top: 0px; width: 100%; height: 100%; z-index: 9001; opacity: 0; transition: opacity 1s linear; -ms-transition: opacity 1s linear; -o-transition: opacity 1s linear; -moz-transition: opacity 1s linear; -webkit-transition: opacity 1s linear; } ._sl_visible { opacity: .4; } ._sl_blur_30 { -webkit-filter: blur(30px); -moz-filter: blur(30px); -ms-filter: blur(30px); -o-filter: blur(30px); filter: blur(30px); filter: url(#_sl_blur_30); }._sl_blur_15 { -webkit-filter: blur(15px); -moz-filter: blur(15px); -ms-filter: blur(15px); -o-filter: blur(15px); filter: blur(15px); filter: url(#_sl_blur_15); } ._sl_blur_7 { -webkit-filter: blur(7px); -moz-filter: blur(7px); -ms-filter: blur(7px); -o-filter: blur(7px); filter: blur(7px); filter: url(#_sl_blur_7); } ._sl_blur_3 { -webkit-filter: blur(3px); -moz-filter: blur(3px); -ms-filter: blur(3px); -o-filter: blur(3px); filter: blur(3px); filter: url(#_sl_blur_3); } ._sl_blur_1 { -webkit-filter: blur(1px); -moz-filter: blur(1px); -ms-filter: blur(1px); -o-filter: blur(1px); filter: blur(1px); filter: url(#_sl_blur_1); }');
+			else
+				_sl_util.injectCSS('_sl_css', '._sl_overlay { position: fixed; background: black; left: 0px; top: 0px; width: 100%; height: 100%; z-index: 9001; opacity: 0; transition: opacity 1s linear; -ms-transition: opacity 1s linear; -o-transition: opacity 1s linear; -moz-transition: opacity 1s linear; -webkit-transition: opacity 1s linear; } ._sl_visible { opacity: .4; }');
 
 			var div = document.createElement('div');
 			div.className = '_sl_overlay _sl_visible';
@@ -184,7 +187,11 @@ var _sl_util = {
   				return c.substring(name.length,c.length);
   		}
 		return "";
-	} 
+	},
+	isMobile: function()
+	{
+		return /Android|webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+	}
 }
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -192,16 +199,12 @@ document.addEventListener('DOMContentLoaded', function () {
 	var css_hide = document.getElementById('_sl_hide');
 	if (css_hide) css_hide.parentNode.removeChild(css_hide);
 	
-	// JL NOTE ~ emergency disabled widget on mobile for now...
-	if( /Android|webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) )
-		return;
-
 	if (_sl_util.getCookie('_SL_WIDGET_SHOWN') && window.location.href.indexOf('ALWAYS_SHOW_SL_WIDGET') == -1)
 		return;
 	else
 		_sl_util.setCookie('_SL_WIDGET_SHOWN', 'true', 365);
 
-	_sl_util.injectCSS('_sl_iframe_css', '#_sl_iframe { position: fixed; left: 50%; margin-left: -375px; margin-top: -250px; top: 50%; width: 750px; height: 400px; z-index: 20000000; }');
+	_sl_util.injectCSS('_sl_iframe_css', '#_sl_iframe { position: fixed; left: 50%; margin-left: -375px; margin-top: -250px; top: 50%; width: 750px; height: 400px; z-index: 20000000; } @media (max-width:749px) { #_sl_iframe { position: fixed; left: 0px; top: 0px; width: 100%; height: 100%; margin-left: 0px; margin-top: 0px; } }');
 
 	var animation = _sl_animations[_sl_options.animation].init(_sl_options).start();
 
