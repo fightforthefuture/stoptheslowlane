@@ -248,7 +248,8 @@
 				'privacy_url': 'https://www.freepress.net/privacy-copyright'
 			}
 		];
-		var org = orgs[Math.floor(Math.random() * 3)];
+		// var org = orgs[Math.floor(Math.random() * 3)];
+		var org = orgs[0];
 		$('a.org').text(org.name);
 		$('a.org').attr('href', org.url);
 		$('a.org_privacy').attr('href', org.privacy_url);
@@ -290,7 +291,7 @@
 			$('button.submit').addClass('disabled');
 			$('button.submit').text('Working...');
 
-			$.ajax('https://platformzz.herokuapp.com/api/movements/1/salsa', {
+			$.ajax('https://action.fightforthefuture.org/api/movements/1/salsa', {
 				type: 'POST',
 				data: {
 					'csrfmiddlewaretoken': 'bvBrPxrWHM3iqcQQbLFAD7N7WZrJMBE3',
